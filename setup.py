@@ -8,8 +8,12 @@ from setuptools import setup
 # https://stackoverflow.com/questions/26737222/pypi-description-markdown-doesnt-work
 try:
     import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst')
-except(IOError, ImportError):
+    with open('README.md', 'r') as fp:
+        import re
+        md = fp.read()
+        md = re.sub(r'!\[.+\]\(.+\)', r'', md)
+        long_description = pypandoc.convert_text(md, 'rst', format='md')
+except(ImportError):
     long_description = open('README.md').read()
 
 setup(
