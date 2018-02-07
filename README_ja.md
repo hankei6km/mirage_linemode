@@ -6,6 +6,7 @@
 
 * emoji 等を使ってフォルダー:file_folder:やファイル:page_facing_up:のアイコンを表示.
 * XDG のユーザーディレクトリ(ローカライズされた名前にも対応するはずです)や特定のディレクトリ/ファイル(例えば `setup.py` や `package.json` `tests` など)へのアイコン指定.
+
 等をカスタマイズできます.
 
 mirage\_linemode は  [ranger\_devicons](https://github.com/alexanderjeurissen/ranger_devicons.git) をすごく参考にしています.
