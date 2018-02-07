@@ -1,4 +1,5 @@
 # Mirage Linemode
+[![Build Status](https://travis-ci.org/hankei6km/mirage_linemode.svg?branch=master)](https://travis-ci.org/hankei6km/mirage_linemode)
 
 Customizable linemode plugin for [ranger](https://ranger.github.io/).
 
