@@ -1,6 +1,7 @@
 # Mirage Linemode
 
 カスタマイズできる [ranger](https://ranger.github.io/) 用の Linemode プラグイン.
+
 ![mirage_linemode](https://raw.githubusercontent.com/hankei6km/mirage_linemode/master/images/mirage_linemode.png)
 
 * emoji 等を使ってフォルダー:file_folder:やファイル:page_facing_up:のアイコンを表示.
@@ -58,12 +59,12 @@ emoji に対応した VTE を利用しているターミナルエミュレータ
 以下の手順でアイコンとしての表示幅をある程度は修正できます.
 
 1. `$ mirage_linemode_ctrl theme -w` を実行すると以下のようなリストが表示されるので、先頭の数字(ranger 側で認識している文字幅)が `2` でありながら、右側の縦線が他よりも引っ込んでいる文字をメモする.
-<p>![theme -w](https://raw.githubusercontent.com/hankei6km/mirage_linemode/master/images/theme_chars_width_list.png)</p>
+<p><img src="https://raw.githubusercontent.com/hankei6km/mirage_linemode/master/images/theme_chars_width_list.png"></p>
 
 2. `<xdg config home>/mirage-linemode/mirage_linemode_config.yaml` をエディタで開き、メモしておいた文字を
 `fix_chars_width.for_term.defaul` に配列として記述.
 3. `fix_chars_width.enabled` を `true` とする.
-<p>![config fix_chars_width.for_term.defaul](https://raw.githubusercontent.com/hankei6km/mirage_linemode/master/images/config_fix_chars_width.png)</p>
+<p><img src="https://raw.githubusercontent.com/hankei6km/mirage_linemode/master/images/config_fix_chars_width.png"></p>
 
 ただし、行右側のファイルサイズ等の表示はガクガクのままです.
 上記設定に加えて、`fix_chars_width.force_right_align` も `true` にすると軽減できますが、親ディレクトリ等の表示にもファイルサイズ等が表示されるようになります.
