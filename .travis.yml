@@ -1,0 +1,14 @@
+language: python
+python:
+#  - "2.6"
+  - "2.7"
+#  - "3.6"
+sudo: false
+addons:
+  apt:
+    packages:
+      - "ranger"
+install: true
+script:
+  - python setup.py test
+  - flake8
