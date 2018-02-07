@@ -1,0 +1,7 @@
+fix_chars_width:
+    enabled: true
+    for_term:
+        default:
+            - 'a'
+            - 'b'
+            - 'c'

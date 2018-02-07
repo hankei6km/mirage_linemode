@@ -1,0 +1,8 @@
+# theme file for test.
+
+line_format: 'test1'
+icon:
+  file: 'test2'
+  directory: 'test3'
+  xdg_user_dirs:
+      'DESKTOP': 'test4'
