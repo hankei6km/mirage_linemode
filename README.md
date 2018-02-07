@@ -46,7 +46,7 @@ Remove `<xdg config home>/mirage-linemode` directory, if you want to clean up cu
 Mirage Linemode imports `<xdg config home>/mirage-linemode/mirage_linemode_theme.yml` as theme when plugin activated every time.
 
 Further info,
-See [README_ja.md](https://github.com/hankei6km/mirage_linemode/blob/master/README.md).
+See [README_ja.md](https://github.com/hankei6km/mirage_linemode/blob/master/README_ja.md).
 
 
 ## License
