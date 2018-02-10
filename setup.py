@@ -19,7 +19,7 @@ except(ImportError):
 setup(
     long_description=long_description,
     setup_requires=['pytest-runner'],
-    tests_require=['mock', 'pytest', 'pytest-cov', 'flake8'],
+    tests_require=['mock', 'pytest', 'pytest-cov'],
     package_data={
         'mirage_linemode': [
             'ranger_plugin/mirage_linemode.py',  # not package directory
