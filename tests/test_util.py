@@ -17,6 +17,7 @@ from mirage_linemode.util import (
     get_theme_path
 )
 
+
 class TestUtil:
     def test_mix_dict(self):
         assert mix_dict({}, {}) == {}
