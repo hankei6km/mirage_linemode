@@ -65,7 +65,7 @@ def isicon(v):
 def print_list(theme_filename):
     try:
         with open(theme_filename, 'r') as fp:
-            theme = yaml.load(fp)
+            theme = yaml.load(fp, Loader=yaml.FullLoader)
     except (OSError, IOError, yaml.YAMLError):
         theme = {'icon': {}}
     theme_icon = theme['icon']
