@@ -81,35 +81,35 @@ ranger.api.hook_init = hook_init
 
 @ranger.api.register_linemode
 class MarksideLinemode(LinemodeBase):
-        name = plugin_name
-        uses_metadata = False
+    name = plugin_name
+    uses_metadata = False
 
-        def filetitle(self, fobj, metadata):
-            title = fobj.relative_path
+    def filetitle(self, fobj, metadata):
+        title = fobj.relative_path
+        icon = get_icon(theme_icon, fobj, metadata)
+        if config_fix_chars_width['enabled'] and \
+                (icon in config_fix_chars_width['for_term']['default']
+                 or icon in config_fix_chars_width['for_both']['default']):
+            icon = icon + ' '
+
+        return theme['line_format'].format(
+            icon=icon,
+            title=title
+        )
+
+    def infostring(self, fobj, metadata):
+        if config_fix_chars_width['enabled'] and \
+                config_fix_chars_width['force_right_align']:
+            ret = fobj.infostring
+
             icon = get_icon(theme_icon, fobj, metadata)
-            if config_fix_chars_width['enabled'] and \
-                    (icon in config_fix_chars_width['for_term']['default'] or
-                     icon in config_fix_chars_width['for_both']['default']):
-                icon = icon + ' '
-
-            return theme['line_format'].format(
-                icon=icon,
-                title=title
-            )
-
-        def infostring(self, fobj, metadata):
-            if config_fix_chars_width['enabled'] and \
-                    config_fix_chars_width['force_right_align']:
-                ret = fobj.infostring
-
-                icon = get_icon(theme_icon, fobj, metadata)
-                if ret is not None and \
-                        icon in config_fix_chars_width['for_term']['default']:
-                    None
-                else:
-                    # ret = ret[:-1]
-                    ret = ret + ' '
-
-                return ret
+            if ret is not None and \
+                    icon in config_fix_chars_width['for_term']['default']:
+                None
             else:
-                raise NotImplementedError
+                # ret = ret[:-1]
+                ret = ret + ' '
+
+            return ret
+        else:
+            raise NotImplementedError
