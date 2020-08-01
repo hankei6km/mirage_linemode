@@ -98,7 +98,7 @@ def get_theme(theme_path):
     src = deepcopy(theme_skelton)
     try:
         with open(theme_path, 'r') as fp:
-            theme = mix_dict(src, yaml.load(fp))
+            theme = mix_dict(src, yaml.load(fp, Loader=yaml.FullLoader))
     except (OSError, IOError, TypeError, yaml.YAMLError):
         theme = mix_dict(src, default_theme)
     # except:

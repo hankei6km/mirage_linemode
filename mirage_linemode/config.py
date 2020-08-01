@@ -37,7 +37,7 @@ def get_config(config_path):
     src = deepcopy(default_config)
     try:
         with open(config_path, 'r') as fp:
-            config = mix_dict(src, yaml.load(fp))
+            config = mix_dict(src, yaml.load(fp, Loader=yaml.FullLoader))
     except (OSError, IOError, TypeError, yaml.YAMLError):
         config = src
     # except:
